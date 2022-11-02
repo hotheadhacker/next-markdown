@@ -17,7 +17,7 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Online Markdown Editor</a>
+          Welcome to <a href="#">Online Markdown Editor</a>
         </h1>
 
         <p className={styles.description}>
@@ -26,47 +26,41 @@ const Home: NextPage = () => {
         </p>
 
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
+          <a href="https://github.com/hotheadhacker/next-markdown" className={styles.card}>
+            <h2>Open Source &rarr;</h2>
+            <p>This project is fully powered by open-source community</p>
           </a>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
+          <a href="#" className={styles.card}>
+            <h2>Live Preview &rarr;</h2>
+            <p>Get instent markdown live previews while typing!</p>
           </a>
 
           <a
             href="https://github.com/vercel/next.js/tree/canary/examples"
             className={styles.card}
           >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
+            <h2>Markdown Editor &rarr;</h2>
+            <p>Get interactive markdown editor that covers every tools needed. Get Blogging editor experiences.</p>
           </a>
 
           <a
             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
             className={styles.card}
           >
-            <h2>Deploy &rarr;</h2>
+            <h2>Cloud Functionalities &rarr;</h2>
             <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
+              *Instantly save, share or edit later your markdown files on the go anywhere form any device.
             </p>
           </a>
         </div>
       </main>
 
       <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
+        
+          <span>Developed with ❤️ by <a href="" className="text-purple-600 font-bold hover:underline">Salman Qureshi</a></span> 
+          
+        
       </footer>
     </div>
   )
