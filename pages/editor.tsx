@@ -18,7 +18,7 @@ const EditerMarkdown = dynamic(
 );
 
 function HomePage() {
-  const [value, setValue] = useState("**Hello world!!!**");
+  const [value, setValue] = useState("**Hello world!!!**" as any);
   return (
     <>
         <Head>
