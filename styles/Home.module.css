@@ -127,3 +127,10 @@
     filter: invert(1);
   }
 }
+
+/* starting manual work from here  */
+
+.heroButton{
+  background-color: rgb(5, 191, 248);
+  padding: 1em;
+}
