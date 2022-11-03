@@ -8,6 +8,7 @@ import "@uiw/react-md-editor/markdown-editor.css";
 import "@uiw/react-markdown-preview/markdown.css";
 import "../styles/Editor.module.css";
 import {uncheckedIcon, checkedIcon} from '../src/svg';
+import Quotes from '../src/mdQuotes';
 
 
 const MDEditor = dynamic(
@@ -23,13 +24,29 @@ const EditerMarkdown = dynamic(
 );
 
 function HomePage() {
-  const [value, setValue] = useState("**Hello world!!!**" as any);
+// generate random number from quotes range
+var randomnumber = Math.floor(Math.random() * ((Quotes.quotes.length-1) - 0 + 1)) + 0;
+  const [value, setValue] = useState(`
+  ## A quote you may need for today 😊
+  > ${Quotes.quotes[randomnumber].quote}
+
+                                         ${Quotes.quotes[randomnumber].author}
+
+----
+### Getting started 😎
+- Delete this template before starting.
+- This editor supports all markdown functionalities.
+- Fully open-source.
+- We don't store your data, anything you type remains in your local browser (_Once we move to cloud, we will encryt all of your data before saving them on servers_).
+- Want any improvemnts or contribute @ [GitHub](https://github.com/hotheadhacker/next-markdown).
+                                                ` as any);
   const [darkMode, setDarkMode] = useState(true);
   const router = useRouter();
   let navBackground = {
         dark: 'flex justify-between bg-gradient-to-r from-slate-700 via-neutral-700 to-gray-800',
         light: 'flex justify-between bg-gradient-to-r from-indigo-100 via-purple-200 to-pink-200'
   }
+
 
   return (
     <>
