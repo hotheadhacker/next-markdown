@@ -40,7 +40,7 @@ var randomnumber = Math.floor(Math.random() * ((Quotes.quotes.length-1) - 0 + 1)
 - We don't store your data, anything you type remains in your local browser (_Once we move to cloud, we will encryt all of your data before saving them on servers_).
 - Want any improvemnts or contribute @ [GitHub](https://github.com/hotheadhacker/next-markdown).
                                                 ` as any);
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
   const router = useRouter();
   let navBackground = {
         dark: 'flex justify-between bg-gradient-to-r from-slate-700 via-neutral-700 to-gray-800',
