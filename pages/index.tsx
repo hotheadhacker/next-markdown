@@ -37,7 +37,7 @@ const Home: NextPage = () => {
           </a>
 
           <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
+            href="#"
             className={styles.card}
           >
             <h2>Markdown Editor &rarr;</h2>
@@ -45,7 +45,7 @@ const Home: NextPage = () => {
           </a>
 
           <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+            href="#"
             className={styles.card}
           >
             <h2>Cloud Functionalities &rarr;</h2>
@@ -58,7 +58,7 @@ const Home: NextPage = () => {
 
       <footer className={styles.footer}>
         
-          <span>Developed with ❤️ by <a href="" className="text-purple-600 font-bold hover:underline">Salman Qureshi</a></span> 
+          <span>Developed with ❤️ by <a href="https://isalman.dev?utm=markdown-footer" className="text-purple-600 font-bold hover:underline">Salman Qureshi</a></span> 
           
         
       </footer>
