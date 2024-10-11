@@ -69,6 +69,19 @@ function HomePage() {
     setValue(value || ""); // Update state with the new value
   };
 
+  // Function to save the markdown content as a .md file
+  const saveMarkdownFile = () => {
+    const blob = new Blob([value], { type: 'text/markdown' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'document.md'; // Name of the file to be downloaded
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url); // Clean up the URL object
+  };
+
   return (
     <>
       <Head>
@@ -79,7 +92,7 @@ function HomePage() {
       </Head>
       <nav className={`flex justify-between items-center p-4 ${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-md`}>
         <button 
-          className="px-6 py-2 font-medium text-white bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500  rounded transition duration-300"
+          className="px-6 py-2 font-medium text-white bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 rounded transition duration-300"
           onClick={() => router.push('/')}
         >
           Home
@@ -103,6 +116,12 @@ function HomePage() {
           height={700}
         />
         <WordCounter text={value} darkMode={darkMode} /> {/* Pass darkMode to WordCounter */}
+        <button 
+          onClick={saveMarkdownFile} 
+          className="fixed bottom-4 right-4 px-6 py-2 font-medium text-white bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500  rounded transition duration-300 shadow-md"
+        >
+          Download
+        </button>
       </div>
     </>
   );
