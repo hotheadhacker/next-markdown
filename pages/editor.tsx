@@ -1,12 +1,10 @@
 import dynamic from "next/dynamic";
 import { useState, useEffect } from "react";
 import Head from 'next/head';
-import Switch from "react-switch";
 import { useRouter } from 'next/router';
 import "@uiw/react-md-editor/markdown-editor.css";
 import "@uiw/react-markdown-preview/markdown.css";
 import "../styles/Editor.module.css";
-import { uncheckedIcon, checkedIcon } from '../src/svg';
 import Quotes from '../src/mdQuotes';
 
 // Dynamic import for the markdown editor
@@ -31,10 +29,6 @@ function HomePage() {
   const [value, setValue] = useState<string>(""); // Initialize with an empty string
   const [darkMode, setDarkMode] = useState(false);
   const router = useRouter();
-  let navBackground = {
-    dark: 'flex justify-between bg-gradient-to-r from-slate-700 via-neutral-700 to-gray-800',
-    light: 'flex justify-between bg-gradient-to-r from-indigo-100 via-purple-200 to-pink-200'
-  };
 
   // Load saved content from localStorage when the component mounts
   useEffect(() => {
@@ -56,8 +50,8 @@ function HomePage() {
 - Delete this template before starting.
 - This editor supports all markdown functionalities.
 - Fully open-source.
-- We don't store your data, anything you type remains in your local browser (_Once we move to cloud, we will encryt all of your data before saving them on servers_).
-- Want any improvemnts or contribute @ [GitHub](https://github.com/hotheadhacker/next-markdown).
+- We don't store your data, anything you type remains in your local browser (_Once we move to cloud, we will encrypt all of your data before saving them on servers_).
+- Want any improvements or contribute @ [GitHub](https://github.com/hotheadhacker/next-markdown).
                                                     `);
       }
     }
@@ -83,20 +77,23 @@ function HomePage() {
         <meta name="author" content="isalman.dev, hotheadhacker, Salman Quresi" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <nav className={darkMode ? navBackground.dark : navBackground.light}>
-        <div>
-          <button type="button" className="m-4 px-8 py-2 font-medium border-double border-4 border-indigo-600 bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500" onClick={() => router.push('/')}> Home</button>
-        </div>
-        <div className="m-3">
-          <label>
-            <Switch
-              uncheckedIcon={uncheckedIcon}
-              checkedIcon={checkedIcon}
-              onChange={() => { setDarkMode(!darkMode) }} 
-              checked={darkMode} 
-            />
-          </label>
-        </div>
+      <nav className={`flex justify-between items-center p-4 ${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-md`}>
+        <button 
+          className="px-6 py-2 font-medium text-white bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500  rounded transition duration-300"
+          onClick={() => router.push('/')}
+        >
+          Home
+        </button>
+        <button 
+          onClick={() => setDarkMode(!darkMode)} 
+          className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-200 hover:bg-gray-300 transition duration-300"
+        >
+          {darkMode ? (
+            <span role="img" aria-label="Sun">☀️</span>
+          ) : (
+            <span role="img" aria-label="Moon">🌙</span>
+          )}
+        </button>
       </nav>
       <div data-color-mode={darkMode ? 'dark' : 'light'} className="relative" style={{ paddingBottom: '50px' }}>
         <MDEditor 
