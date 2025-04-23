@@ -1,5 +1,8 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 <!-- GitAds-Verify: AHG84PGCDHFBSZNOEALHPOKCPNANC81L -->
+## GitAds Sponsored
+[![Sponsored by GitAds](https://gitads.dev/v1/ad-serve?source=hotheadhacker/next-markdown@github)](https://gitads.dev/v1/ad-track?source=hotheadhacker/next-markdown@github)
+
 ## Getting Started
 
 First, run the development server:
